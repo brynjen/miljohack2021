@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,11 @@ import 'package:miljohack/presentation/main/pages/posten_main.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runZonedGuarded(() async {
-    await Firebase.initializeApp();
+    try {
+      await Firebase.initializeApp();
+    } catch (e) {
+      log('Failed firebase:$e');
+    }
     runApp(const Miljohack2021());
   }, (error, stackTrace) {});
 }
