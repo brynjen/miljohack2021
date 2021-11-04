@@ -1,12 +1,12 @@
 import 'dart:developer';
 
-import 'package:community_material_icon/community_material_icon.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
+import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/main/pages/for_me.dart';
 import 'package:miljohack/presentation/main/pages/from_me.dart';
 
@@ -77,10 +77,10 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(CommunityMaterialIcons.package), label: 'Profil'),
-          BottomNavigationBarItem(icon: Icon(Icons.send), label: 'Sende'),
+              icon: Icon(MiljoHack.package), label: 'Mine pakker'),
+          BottomNavigationBarItem(icon: Icon(MiljoHack.send), label: 'Sende'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle), label: 'Profil')
+              icon: Icon(MiljoHack.account_circle), label: 'Profil')
         ],
       ),
     );

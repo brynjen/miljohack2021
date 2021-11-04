@@ -1,6 +1,6 @@
-import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:miljohack/presentation/core/app_theme.dart';
+import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
+import 'package:miljohack/presentation/core/theme/app_theme.dart';
 
 class MailAvatar extends StatelessWidget {
   const MailAvatar({Key? key}) : super(key: key);
@@ -8,10 +8,7 @@ class MailAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      child: Icon(
-        CommunityMaterialIcons.package_variant_closed,
-        color: AppColors.darkRed,
-      ),
+      child: Icon(MiljoHack.package, color: AppColors.darkRed),
       backgroundColor: AppColors.lightRed,
     );
   }

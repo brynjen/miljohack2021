@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
 import 'package:miljohack/domain/main/data/mail_package.dart';
-import 'package:miljohack/presentation/core/app_theme.dart';
+import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/main/pages/package_details.dart';
 import 'package:miljohack/presentation/main/widgets/package_card.dart';
 

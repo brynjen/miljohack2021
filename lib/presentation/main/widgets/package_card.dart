@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miljohack/domain/main/data/mail_package.dart';
-import 'package:miljohack/presentation/core/app_theme.dart';
+import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/main/widgets/mail_avatar.dart';
 
 class PackageCard extends StatelessWidget {
