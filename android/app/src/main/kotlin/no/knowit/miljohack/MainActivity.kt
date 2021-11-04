@@ -1,4 +1,4 @@
-package com.example.miljohack
+package no.knowit.miljohack
 
 import io.flutter.embedding.android.FlutterActivity
 
