@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:http/http.dart' as http;
@@ -24,23 +25,17 @@ class ApiClient {
   }
 
   Future<List<MailPackage>> loadPackages() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return [
-      MailPackage(
-          id: 'test1',
-          shopName: 'Multicom AS',
-          delivery: 'Frakt er bestilt - 4. november',
-          time: '13:44'),
-      MailPackage(
-          id: 'test2',
-          shopName: 'Zalando AS',
-          delivery: 'Pakken er på vei - 3. november',
-          time: '18:55'),
-      MailPackage(
-          id: 'test3',
-          shopName: 'Komplett ASA',
-          delivery: 'Pakken er på vei - 3. november',
-          time: '11:05'),
-    ];
+    final mailPackages = <MailPackage>[];
+    final response = await http.get(Uri.http(
+        host, 'packages', {'Content-Type': 'text/html; charset=utf-8'}));
+    final output = jsonDecode(response.body);
+    try {
+      for (final package in (output as List<dynamic>)) {
+        mailPackages.add(MailPackage.fromJson(package));
+      }
+    } catch (e) {
+      log('Failed: $e');
+    }
+    return mailPackages;
   }
 }

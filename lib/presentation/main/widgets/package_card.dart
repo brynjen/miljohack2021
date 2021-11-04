@@ -1,7 +1,7 @@
-import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:miljohack/domain/main/data/mail_package.dart';
 import 'package:miljohack/presentation/core/app_theme.dart';
+import 'package:miljohack/presentation/main/widgets/mail_avatar.dart';
 
 class PackageCard extends StatelessWidget {
   const PackageCard(
@@ -22,29 +22,20 @@ class PackageCard extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
-            title: Text(mailPackage.shopName,
-                style:
-                    const TextStyle(fontSize: 22, fontWeight: FontWeight.w900)),
+            title: Text(mailPackage.shopName, style: TS.bold),
             subtitle: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 4),
                 Text(
-                  mailPackage.delivery,
-                  style: const TextStyle(fontSize: 12, color: Colors.black),
+                  '${mailPackage.message} - ${mailPackage.deliveryDate}',
+                  style: TS.body,
                 ),
-                Text(mailPackage.time,
-                    style: const TextStyle(fontSize: 14, color: Colors.black)),
+                Text(mailPackage.deliveryTime, style: TS.body2),
               ],
             ),
-            trailing: CircleAvatar(
-              child: Icon(
-                CommunityMaterialIcons.package_variant_closed,
-                color: AppTheme.darkRed,
-              ),
-              backgroundColor: AppTheme.lightRed,
-            ),
+            trailing: const MailAvatar(),
           ),
         ),
       ),

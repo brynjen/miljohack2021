@@ -1,12 +1,19 @@
 class MailPackage {
-  MailPackage(
-      {required this.id,
-      required this.shopName,
-      required this.delivery,
-      required this.time});
+  MailPackage({
+    required this.shopName,
+    required this.message,
+    required this.deliveryDate,
+    required this.deliveryTime,
+  });
 
-  final String id;
   final String shopName;
-  final String delivery;
-  final String time;
+  final String message;
+  final String deliveryDate;
+  final String deliveryTime;
+
+  static MailPackage fromJson(Map<String, dynamic> json) => MailPackage(
+      shopName: json['shop_name'],
+      message: json['message'],
+      deliveryDate: json['delivery_date'],
+      deliveryTime: json['delivery_time']);
 }

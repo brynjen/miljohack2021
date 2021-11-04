@@ -26,6 +26,7 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+
     tabController = TabController(length: 2, vsync: this);
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       log('Firebase message received: ${message.notification?.title} - ${message.notification?.body}');
