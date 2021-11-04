@@ -1,6 +1,7 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:miljohack/domain/main/data/mail_package.dart';
+import 'package:miljohack/presentation/core/app_theme.dart';
 
 class PackageCard extends StatelessWidget {
   const PackageCard(
@@ -19,28 +20,31 @@ class PackageCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(4),
         child: Padding(
           padding: const EdgeInsets.all(10),
-          child: Row(
-            children: [
-              const Icon(CommunityMaterialIcons.package_variant_closed),
-              Expanded(
-                child: ListTile(
-                  title: Text(mailPackage.shopName,
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold)),
-                  subtitle: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        mailPackage.delivery,
-                        style: const TextStyle(fontSize: 10),
-                      ),
-                      Text(mailPackage.time,
-                          style: const TextStyle(fontSize: 11)),
-                    ],
-                  ),
+          child: ListTile(
+            contentPadding: EdgeInsets.zero,
+            title: Text(mailPackage.shopName,
+                style:
+                    const TextStyle(fontSize: 22, fontWeight: FontWeight.w900)),
+            subtitle: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 4),
+                Text(
+                  mailPackage.delivery,
+                  style: const TextStyle(fontSize: 12, color: Colors.black),
                 ),
-              )
-            ],
+                Text(mailPackage.time,
+                    style: const TextStyle(fontSize: 14, color: Colors.black)),
+              ],
+            ),
+            trailing: CircleAvatar(
+              child: Icon(
+                CommunityMaterialIcons.package_variant_closed,
+                color: AppTheme.darkRed,
+              ),
+              backgroundColor: AppTheme.lightRed,
+            ),
           ),
         ),
       ),
