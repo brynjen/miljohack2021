@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "346476137354",
+    "project_id": "miljohack2021",
+    "storage_bucket": "miljohack2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346476137354:android:da73dd961dd214e7dc5673",
+        "android_client_info": {
+          "package_name": "no.knowit.miljohack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346476137354-u8lunrksg6inf4vkfig84a16lesd25p2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1Le5q3zXu6wb8b3CzfSfhGVJA0qv2N6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346476137354-u8lunrksg6inf4vkfig84a16lesd25p2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
