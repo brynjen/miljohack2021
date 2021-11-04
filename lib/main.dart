@@ -4,8 +4,10 @@ import 'dart:developer';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get_it/get_it.dart';
+import 'package:miljohack/application/main/package_list/package_list.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/main/pages/posten_main.dart';
 
@@ -62,15 +64,21 @@ class Miljohack2021 extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Miljøhack 2021 - Posten',
-      theme: ThemeData.light().copyWith(
-          colorScheme:
-              ThemeData.light().colorScheme.copyWith(primary: Colors.red)),
-      darkTheme: ThemeData.dark().copyWith(
-          colorScheme:
-              ThemeData.light().colorScheme.copyWith(primary: Colors.red)),
-      home: const PostenMain(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<PackageListBloc>(
+            create: (_) => PackageListBloc()) // ..add(LoadPackages())
+      ],
+      child: MaterialApp(
+        title: 'Miljøhack 2021 - Posten',
+        theme: ThemeData.light().copyWith(
+            colorScheme:
+                ThemeData.light().colorScheme.copyWith(primary: Colors.red)),
+        darkTheme: ThemeData.dark().copyWith(
+            colorScheme:
+                ThemeData.light().colorScheme.copyWith(primary: Colors.red)),
+        home: const PostenMain(),
+      ),
     );
   }
 }

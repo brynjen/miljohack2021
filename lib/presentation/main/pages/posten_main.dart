@@ -3,7 +3,9 @@ import 'dart:developer';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:miljohack/application/main/package_list/package_list.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/main/pages/for_me.dart';
 import 'package:miljohack/presentation/main/pages/from_me.dart';
@@ -68,9 +70,7 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
         ),
       ),
       body: RefreshIndicator(
-        onRefresh: () async {
-          await Future.delayed(const Duration(seconds: 2));
-        },
+        onRefresh: onRefresh,
         child: tabPages[tabController.index],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -85,7 +85,10 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
     );
   }
 
-  Future<void> onRefresh() async {}
-
-  Future<void> onLoading() async {}
+  Future<void> onRefresh() async {
+    final apiClient = GetIt.instance.get<ApiClient>();
+    final packages = await apiClient.loadPackages();
+    BlocProvider.of<PackageListBloc>(context)
+        .add(HackLoadedPackages(mailPackages: packages));
+  }
 }

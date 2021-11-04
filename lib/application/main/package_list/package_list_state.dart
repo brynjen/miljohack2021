@@ -9,7 +9,12 @@ class PackageListState extends Equatable {
 /// User has no packages atm
 class NoPackages extends PackageListState {}
 
-class LoadingPackages extends PackageListState {}
+class LoadingPackages extends PackageListState {
+  LoadingPackages({required this.mailPackages});
+  final List<MailPackage> mailPackages;
+  @override
+  List<Object?> get props => mailPackages;
+}
 
 class LoadedPackages extends PackageListState {
   LoadedPackages({required this.mailPackages});
