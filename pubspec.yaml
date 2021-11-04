@@ -26,11 +26,14 @@ dependencies:
 
   # Network communications
   connectivity: ^3.0.6 # Allows check for internet connectivity
-  http: ^0.13.3
+  http: ^0.13.4
 
   # Local storage
   flutter_secure_storage: ^4.2.1
   shared_preferences: ^2.0.8
+
+  # Notifications
+  flutter_local_notifications: ^9.0.2
 
   # Firebase related addons
   firebase_core: ^1.8.0 # For Firebase communication, needed for all packages
@@ -38,6 +41,9 @@ dependencies:
   firebase_messaging: ^10.0.9 # Notifications
   firebase_crashlytics: ^2.2.4 # Error handling and reporting
   #cloud_firestore: ^2.5.4 # For FireStore communication, database - if we want it
+
+  # Enables swipe to refresh
+  #pull_to_refresh: ^2.0.0
 
   # Icons
   community_material_icon: ^5.9.55

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/main/pages/for_me.dart';
 import 'package:miljohack/presentation/main/pages/from_me.dart';
@@ -16,7 +17,7 @@ class PostenMain extends StatefulWidget {
 }
 
 class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
-  final apiClient = ApiClient();
+  final apiClient = GetIt.instance.get<ApiClient>();
   late final TabController tabController;
   final tabPages = const <Widget>[ForMe(), FromMe()];
 
@@ -24,6 +25,9 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     tabController = TabController(length: 2, vsync: this);
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      log('Firebase message received: ${message.notification?.title} - ${message.notification?.body}');
+    });
   }
 
   @override
@@ -44,8 +48,11 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
                     await FirebaseMessaging.instance.getToken();
                 if (token != null) {
                   apiClient.sendToken(token: token);
+                  const snackBar = SnackBar(content: Text('Token sendt'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 } else {
-                  log('No token found');
+                  const snackBar = SnackBar(content: Text('Token ikke sendt'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
               icon: const Icon(Icons.add))
@@ -57,10 +64,15 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
               tabController.index = index;
             });
           },
-          tabs: const [Tab(text: 'Til meg'), Tab(text: 'Fra meg')],
+          tabs: const [Tab(text: 'TIL MEG'), Tab(text: 'FRA MEG')],
         ),
       ),
-      body: tabPages[tabController.index],
+      body: RefreshIndicator(
+        onRefresh: () async {
+          await Future.delayed(const Duration(seconds: 2));
+        },
+        child: tabPages[tabController.index],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
@@ -72,4 +84,8 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
       ),
     );
   }
+
+  Future<void> onRefresh() async {}
+
+  Future<void> onLoading() async {}
 }

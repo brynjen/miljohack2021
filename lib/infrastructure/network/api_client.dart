@@ -1,17 +1,24 @@
 import 'dart:developer';
-import 'dart:io';
+
+import 'package:http/http.dart' as http;
 
 class ApiClient {
-  final HttpClient httpClient = HttpClient();
-  final String url = 'http://127.0.0.1';
+  final String host = '167.99.212.65';
 
-  Future<void> sendToken({required String token}) async {
+  Future<bool> sendToken({required String token}) async {
     try {
-      final response =
-          await httpClient.getUrl(Uri.parse('$url?device_token=$token'));
-      log('Sent token');
+      final uri = Uri.http(
+          host, 'notification', {'device_token': Uri.encodeFull(token)});
+      final response = await http.get(uri);
+      log('Sent token:${response.statusCode} - ${response.body}');
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        return false;
+      }
     } catch (e) {
       log('Failed to push: $e');
+      return false;
     }
   }
 }
