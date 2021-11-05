@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(name) => "Hello ${name}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "change_name": MessageLookupByLibrary.simpleMessage("Change name"),
@@ -28,8 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "environment_stuff_message": MessageLookupByLibrary.simpleMessage(
             "Here is a lot of stuff about environment"),
         "environment_stuff_title":
-            MessageLookupByLibrary.simpleMessage("Environmental stuff"),
+            MessageLookupByLibrary.simpleMessage("Details"),
         "from_me": MessageLookupByLibrary.simpleMessage("FROM ME"),
+        "greet_user": m0,
         "make_my_package_environment": MessageLookupByLibrary.simpleMessage(
             "Yes please, make my package environmentally friendly"),
         "make_package_environment": MessageLookupByLibrary.simpleMessage(
@@ -45,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Read more about environmentally friendly deliveries here"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "share_package": MessageLookupByLibrary.simpleMessage("Share package"),
+        "thank_you": MessageLookupByLibrary.simpleMessage(
+            "Thank you for acting environmentally - here you can see the toplist and how you and your neighbors are doing. Spread the rumor :)"),
         "to_me": MessageLookupByLibrary.simpleMessage("TO ME"),
         "you_are_not_sending":
             MessageLookupByLibrary.simpleMessage("You are not sending packages")

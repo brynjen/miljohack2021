@@ -5,42 +5,48 @@ class MailPackage extends Equatable {
     required this.id,
     required this.climateOptimized,
     required this.shopName,
-    required this.message,
     required this.deliveryDate,
+    required this.deliveryTimestamp,
     required this.deliveryTime,
   });
 
   final int id;
   final String shopName;
-  final String message;
   final String deliveryDate;
   final String deliveryTime;
+  final String deliveryTimestamp;
   final bool climateOptimized;
 
   static MailPackage fromJson(Map<String, dynamic> json) => MailPackage(
       id: json['package_id'],
       climateOptimized: json['climate_optimized'] == 1,
       shopName: json['shop_name'],
-      message: json['message'],
+      deliveryTimestamp: json['delivery_timestamp'],
       deliveryDate: json['delivery_date'],
       deliveryTime: json['delivery_time']);
 
   MailPackage copyWith(
           {bool? climateOptimized,
           String? shopName,
-          String? message,
           String? deliveryDate,
+          String? deliveryTimestamp,
           String? deliveryTime}) =>
       MailPackage(
         id: id,
         climateOptimized: climateOptimized ?? this.climateOptimized,
         shopName: shopName ?? this.shopName,
-        message: message ?? this.message,
         deliveryDate: deliveryDate ?? this.deliveryDate,
+        deliveryTimestamp: deliveryTimestamp ?? this.deliveryTimestamp,
         deliveryTime: deliveryTime ?? this.deliveryTime,
       );
 
   @override
-  List<Object?> get props =>
-      [id, climateOptimized, shopName, message, deliveryDate, deliveryTime];
+  List<Object?> get props => [
+        id,
+        climateOptimized,
+        shopName,
+        deliveryDate,
+        deliveryTimestamp,
+        deliveryTime
+      ];
 }

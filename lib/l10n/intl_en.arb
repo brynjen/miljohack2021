@@ -17,6 +17,15 @@
   "environment_package_description": "This package can be delivered with other packages you have on the way. You'll save the climate and earn environment points!",
   "make_my_package_environment": "Yes please, make my package environmentally friendly",
   "read_more_about_environment": "Read more about environmentally friendly deliveries here",
-  "environment_stuff_title": "Environmental stuff",
-  "environment_stuff_message": "Here is a lot of stuff about environment"
+  "environment_stuff_title": "Details",
+  "environment_stuff_message": "Here is a lot of stuff about environment",
+  "greet_user": "Hello {name}",
+  "@greet_user": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "thank_you": "Thank you for acting environmentally - here you can see the toplist and how you and your neighbors are doing. Spread the rumor :)"
 }
