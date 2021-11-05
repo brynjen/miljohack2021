@@ -8,6 +8,7 @@ import 'package:miljohack/application/main/package_list/package_list.dart';
 import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
+import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/main/pages/for_me.dart';
 import 'package:miljohack/presentation/main/pages/from_me.dart';
 
@@ -44,6 +45,7 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text(S.of(context).my_packages),
         actions: [
           IconButton(
@@ -62,6 +64,7 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
               icon: const Icon(Icons.add))
         ],
         bottom: TabBar(
+          indicatorColor: AppColors.white,
           controller: tabController,
           onTap: (index) {
             setState(() {
