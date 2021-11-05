@@ -4,7 +4,7 @@ import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import 'test_empty_package_list_bloc.mocks.dart';
+import 'mocks/test_empty_package_list_bloc.mocks.dart';
 
 @GenerateMocks([ApiClient])
 void main() {

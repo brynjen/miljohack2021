@@ -26,6 +26,7 @@ jobs:
       - run: flutter pub get
       - run: flutter pub run intl_utils:generate && echo "Generated resources"
       - run: flutter doctor -v
+      - run: flutter test test/*.dart
       - run: flutter build apk
       - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1

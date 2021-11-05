@@ -4,7 +4,7 @@ import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import 'test_sending_token_fails.mocks.dart';
+import 'mocks/test_sending_token_fails.mocks.dart';
 
 @GenerateMocks([ApiClient])
 void main() {
