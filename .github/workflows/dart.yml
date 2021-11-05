@@ -13,7 +13,7 @@ on:
 
 jobs:
   android:
-    name: MiljøHack20201-Posten
+    name: MiljøHack2021
     runs-on: ubuntu-latest
     steps:
       - name: Setup Ruby
@@ -34,10 +34,10 @@ jobs:
           flutter pub get
           flutter doctor -v
           flutter pub run intl_utils:generate && echo "Generated resources"
-      - name: Run tests
-        run: |
-          echo ${{ steps.release_log.outputs.release_desc }}
-          flutter test test/
+      #- name: Run tests
+      #  run: |
+      #    echo ${{ steps.release_log.outputs.release_desc }}
+      #    flutter test test/
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
