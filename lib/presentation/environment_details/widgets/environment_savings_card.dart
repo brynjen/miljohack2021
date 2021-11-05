@@ -60,15 +60,17 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                       Container(
                         color: AppColors.red[600]!,
                         child: Text('Gjør pakken bærekraftig!',
-                            style:
-                                TS.subtitle.copyWith(color: AppColors.white)),
+                            style: TS
+                                .of(context)
+                                .subtitle
+                                .copyWith(color: AppColors.white)),
                       )
                     ],
                   ),
                   const SizedBox(height: 10),
                   Text(
                     'Denne pakken kan leveres sammen med andre pakker du har på vei. Da sparer du miljøet og tjener Miljøpoeng!',
-                    style: TS.body.copyWith(color: AppColors.white),
+                    style: TS.of(context).body.copyWith(color: AppColors.white),
                   ),
                 ],
               ),
@@ -97,7 +99,7 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                       Expanded(
                         child: Text(
                           'Ja takk, gjør pakken min mer bærekraftig',
-                          style: TS.fatSubTitle,
+                          style: TS.of(context).fatSubTitle,
                         ),
                       ),
                       Switch(
@@ -137,7 +139,7 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       child: Text(
                         'Her kan du lese mer om bærekraftig frakt',
-                        style: TS.link,
+                        style: TS.of(context).link,
                       ),
                     ),
                   ),

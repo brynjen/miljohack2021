@@ -10,17 +10,21 @@ class ForMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PackageListBloc, PackageListState>(builder: (_, state) {
-      if (state is LoadingPackages) {
-        return PackageList(mailPackages: state.mailPackages);
-      } else if (state is LoadedPackages) {
-        return PackageList(mailPackages: state.mailPackages);
-      } else if (state is NoPackages) {
-        return Container();
-      } else {
-        throw ArgumentError('Invalid state');
-      }
-    });
+    return Container(
+      color: Theme.of(context).backgroundColor,
+      child:
+          BlocBuilder<PackageListBloc, PackageListState>(builder: (_, state) {
+        if (state is LoadingPackages) {
+          return PackageList(mailPackages: state.mailPackages);
+        } else if (state is LoadedPackages) {
+          return PackageList(mailPackages: state.mailPackages);
+        } else if (state is NoPackages) {
+          return Container();
+        } else {
+          throw ArgumentError('Invalid state');
+        }
+      }),
+    );
   }
 }
 

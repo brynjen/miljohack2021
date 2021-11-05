@@ -32,7 +32,7 @@ class CircleOption extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               text,
-              style: TS.body2,
+              style: TS.of(context).body2,
               textAlign: TextAlign.center,
             ),
           ],

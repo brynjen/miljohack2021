@@ -17,14 +17,14 @@ class PackageDetails extends StatelessWidget {
         title: const Text('Detaljer på pakken'),
       ),
       body: Container(
-        color: AppColors.greyBg,
+        color: Theme.of(context).backgroundColor,
         child: ListView(
           children: [
             Container(
               color: AppColors.white,
               child: ListTile(
-                title: Text(mailPackage.shopName, style: TS.bold),
-                subtitle: Text('Frakt er bestilt', style: TS.body),
+                title: Text(mailPackage.shopName, style: TS.of(context).bold),
+                subtitle: Text('Frakt er bestilt', style: TS.of(context).body),
                 trailing: const MailAvatar(),
               ),
             ),

@@ -22,7 +22,7 @@ class PackageCard extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: ListTile(
             contentPadding: EdgeInsets.zero,
-            title: Text(mailPackage.shopName, style: TS.bold),
+            title: Text(mailPackage.shopName, style: TS.of(context).bold),
             subtitle: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,9 +30,9 @@ class PackageCard extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   '${mailPackage.message} - ${mailPackage.deliveryDate}',
-                  style: TS.body,
+                  style: TS.of(context).body,
                 ),
-                Text(mailPackage.deliveryTime, style: TS.body2),
+                Text(mailPackage.deliveryTime, style: TS.of(context).body2),
               ],
             ),
             trailing: const MailAvatar(),
