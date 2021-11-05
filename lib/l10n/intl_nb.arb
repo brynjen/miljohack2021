@@ -17,6 +17,8 @@
   "environment_package_description": "Denne pakken kan leveres sammen med andre pakker du har på vei. Da sparer du miljøet og tjener Miljøpoeng!",
   "make_my_package_environment": "Ja takk, gjør pakken min mer bærekraftig",
   "read_more_about_environment": "Her kan du lese mer om bærekraftig frakt",
-  "environment_stuff_title": "Miljø stuff",
-  "environment_stuff_message": "Her er masse nyttig om miljø ting"
+  "environment_stuff_title": "Detaljer",
+  "environment_stuff_message": "Her er masse nyttig om miljø ting",
+  "greet_user": "Hei {name}",
+  "thank_you": "Takk for at du handler bærekraftig - her kan du se topplisten og hvordan du og naboene dine ligger an. Spre ryktet :)"
 }

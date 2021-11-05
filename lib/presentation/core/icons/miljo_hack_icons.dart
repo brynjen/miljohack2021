@@ -9,9 +9,9 @@
 ///   fonts:
 ///    - family:  MiljoHack
 ///      fonts:
-///       - asset: fonts/miljo_hack.ttf
+///       - asset: fonts/MiljoHack.ttf
 ///
-///
+/// 
 /// * Material Design Icons, Copyright (C) Google, Inc
 ///         Author:    Google
 ///         License:   Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
@@ -20,6 +20,10 @@
 ///         Author:    P.J. Onori
 ///         License:   SIL (http://scripts.sil.org/OFL)
 ///         Homepage:  http://somerandomdude.com/work/iconic/
+/// * Fontelico, Copyright (C) 2012 by Fontello project
+///         Author:    Crowdsourced, for Fontello project
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://fontello.com
 /// * Font Awesome 4, Copyright (C) 2016 by Dave Gandy
 ///         Author:    Dave Gandy
 ///         License:   SIL ()
@@ -41,20 +45,13 @@ class MiljoHack {
   static const _kFontFam = 'MiljoHack';
   static const String? _kFontPkg = null;
 
-  static const IconData account_circle =
-      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData chat_bubble_outline =
-      IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData send =
-      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData exchange =
-      IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData pencil_squared =
-      IconData(0xf14b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData share_square =
-      IconData(0xf14d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData trashcan =
-      IconData(0xf33c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData package =
-      IconData(0xf383, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData account_circle = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData chat_bubble_outline = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData send = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData exchange = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData emo_wink2 = IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData pencil_squared = IconData(0xf14b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData share_square = IconData(0xf14d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData trashcan = IconData(0xf33c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData package = IconData(0xf383, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

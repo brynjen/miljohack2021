@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:http/http.dart' as http;
+import 'package:miljohack/domain/environment_details/area_score.dart';
 import 'package:miljohack/domain/main/data/mail_package.dart';
 
 class ApiClient {
@@ -27,6 +28,7 @@ class ApiClient {
     final mailPackages = <MailPackage>[];
     final response = await http.get(Uri.http(
         host, 'packages', {'Content-Type': 'text/html; charset=utf-8'}));
+    log('Load: ${response.body}');
     final output = jsonDecode(response.body);
     try {
       for (final package in (output as List<dynamic>)) {
@@ -43,6 +45,22 @@ class ApiClient {
         Uri.http(host, 'optimize-package', {'package_id': '$packageId'});
     await http.get(uri);
     //await Future.delayed(const Duration(seconds: 4));
+  }
+
+  Future<List<AreaScore>> leaderboard() async {
+    final uri = Uri.http(host, 'leaderboard', {});
+    final response = await http.get(uri);
+    log('Response: $response');
+    final areaScores = <AreaScore>[];
+    final output = jsonDecode(response.body);
+    /*try {
+      for (final single in (output as List<dynamic>)) {
+        areaScores.add(AreaScore.fromJson(single));
+      }
+    } catch (e) {
+      log('Failed: $e');
+    }*/
+    return areaScores;
   }
 
   Future<void> unOptimizePackage({required int packageId}) async {

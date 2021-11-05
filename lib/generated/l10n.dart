@@ -210,10 +210,10 @@ class S {
     );
   }
 
-  /// `Environmental stuff`
+  /// `Details`
   String get environment_stuff_title {
     return Intl.message(
-      'Environmental stuff',
+      'Details',
       name: 'environment_stuff_title',
       desc: '',
       args: [],
@@ -225,6 +225,26 @@ class S {
     return Intl.message(
       'Here is a lot of stuff about environment',
       name: 'environment_stuff_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hello {name}`
+  String greet_user(Object name) {
+    return Intl.message(
+      'Hello $name',
+      name: 'greet_user',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Thank you for acting environmentally - here you can see the toplist and how you and your neighbors are doing. Spread the rumor :)`
+  String get thank_you {
+    return Intl.message(
+      'Thank you for acting environmentally - here you can see the toplist and how you and your neighbors are doing. Spread the rumor :)',
+      name: 'thank_you',
       desc: '',
       args: [],
     );

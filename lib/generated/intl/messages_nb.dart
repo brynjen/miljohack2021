@@ -19,6 +19,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'nb';
 
+  static String m0(name) => "Hei ${name}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "change_name": MessageLookupByLibrary.simpleMessage("Endre navn"),
@@ -28,8 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "environment_stuff_message": MessageLookupByLibrary.simpleMessage(
             "Her er masse nyttig om miljø ting"),
         "environment_stuff_title":
-            MessageLookupByLibrary.simpleMessage("Miljø stuff"),
+            MessageLookupByLibrary.simpleMessage("Detaljer"),
         "from_me": MessageLookupByLibrary.simpleMessage("FRA MEG"),
+        "greet_user": m0,
         "make_my_package_environment": MessageLookupByLibrary.simpleMessage(
             "Ja takk, gjør pakken min mer bærekraftig"),
         "make_package_environment":
@@ -45,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Her kan du lese mer om bærekraftig frakt"),
         "send": MessageLookupByLibrary.simpleMessage("Sende"),
         "share_package": MessageLookupByLibrary.simpleMessage("Del pakke"),
+        "thank_you": MessageLookupByLibrary.simpleMessage(
+            "Takk for at du handler bærekraftig - her kan du se topplisten og hvordan du og naboene dine ligger an. Spre ryktet :)"),
         "to_me": MessageLookupByLibrary.simpleMessage("TIL MEG"),
         "you_are_not_sending":
             MessageLookupByLibrary.simpleMessage("Du sender ingen pakker")
