@@ -11,9 +11,14 @@ class AreaScore {
   final double score;
   final bool marked;
 
-  static AreaScore fromJson(Map<String, dynamic> json) => AreaScore(
-        placement: json[''],
-        area: json[''],
-        score: json[''],
+  static AreaScore fromJson(
+          {required Map<String, dynamic> json,
+          required int placement,
+          required bool marked}) =>
+      AreaScore(
+        placement: placement,
+        area: json['zip_code'],
+        score: json['score'],
+        marked: marked,
       );
 }

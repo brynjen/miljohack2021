@@ -45,12 +45,8 @@ dependencies:
   firebase_crashlytics: ^2.2.4 # Error handling and reporting
   #cloud_firestore: ^2.5.4 # For FireStore communication, database - if we want it
 
-  # Enables swipe to refresh
-  #pull_to_refresh: ^2.0.0
-
-  # Icons
-  #community_material_icon: ^5.9.55
-  #cupertino_icons: ^1.0.2
+  # Utils
+  scroll_to_index: ^2.1.0
 
 dev_dependencies:
 #  flutter_test:

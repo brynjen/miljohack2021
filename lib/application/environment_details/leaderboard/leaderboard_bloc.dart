@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/environment_details/leaderboard/leaderboard.dart';
-import 'package:miljohack/domain/environment_details/area_score.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 
 class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
@@ -16,10 +15,7 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
     if (event is LoadLeaderboard) {
       try {
         final response = await _api.leaderboard();
-
-        final areaScores = <AreaScore>[];
-
-        yield LoadedLeaderboard(areaScores: areaScores);
+        yield LoadedLeaderboard(areaScores: response);
       } catch (e) {
         yield FailedLoadingLeaderboard();
       }

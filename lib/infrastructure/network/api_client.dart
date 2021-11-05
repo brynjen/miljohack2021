@@ -28,14 +28,9 @@ class ApiClient {
     final mailPackages = <MailPackage>[];
     final response = await http.get(Uri.http(
         host, 'packages', {'Content-Type': 'text/html; charset=utf-8'}));
-    log('Load: ${response.body}');
     final output = jsonDecode(response.body);
-    try {
-      for (final package in (output as List<dynamic>)) {
-        mailPackages.add(MailPackage.fromJson(package));
-      }
-    } catch (e) {
-      log('Failed: $e');
+    for (final package in (output as List<dynamic>)) {
+      mailPackages.add(MailPackage.fromJson(package));
     }
     return mailPackages;
   }
@@ -44,22 +39,18 @@ class ApiClient {
     final uri =
         Uri.http(host, 'optimize-package', {'package_id': '$packageId'});
     await http.get(uri);
-    //await Future.delayed(const Duration(seconds: 4));
   }
 
   Future<List<AreaScore>> leaderboard() async {
     final uri = Uri.http(host, 'leaderboard', {});
     final response = await http.get(uri);
-    log('Response: $response');
     final areaScores = <AreaScore>[];
     final output = jsonDecode(response.body);
-    /*try {
-      for (final single in (output as List<dynamic>)) {
-        areaScores.add(AreaScore.fromJson(single));
-      }
-    } catch (e) {
-      log('Failed: $e');
-    }*/
+    final places = output as List<dynamic>;
+    for (int i = 0; i < places.length; i++) {
+      areaScores.add(AreaScore.fromJson(
+          json: places[i], placement: i + 1, marked: i == 2));
+    }
     return areaScores;
   }
 
@@ -67,6 +58,5 @@ class ApiClient {
     final uri =
         Uri.http(host, 'unoptimize-package', {'package_id': '$packageId'});
     await http.get(uri);
-    //await Future.delayed(const Duration(seconds: 4));
   }
 }
