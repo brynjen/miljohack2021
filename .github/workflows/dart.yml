@@ -49,17 +49,10 @@ jobs:
           cd android &&
           gem install bundler &&
           bundle install
-      - name: Run Fastlane to Build RT
-        uses: maierj/fastlane-action@v2.0.1
-        with:
-          lane: 'to_firebase_distribution_for_dev_release'
-          options: '{ "release_log": "${{ steps.release_log.outputs.release_desc }}" }'
-          subdirectory: 'android/fastlane'
-          skip-tracking: true
-        env:
-          SECRETS_DECRYPTION_KEY: ${{ secrets.SECRETS_DECRYPTION_KEY }}
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          BUILD_NUMBER: ${{ github.run_number }}
-          GIT_TAG_REF: ${{ steps.latest_dev_version.outputs.tag }}
-          COMMIT_USER: ${{ github.event.head_commit.author.username }}
-          COMMIT_MSG: ${{ github.event.head_commit.message }}
+      - name: Upload artifact to Firebase App Distribution
+          uses: wzieba/Firebase-Distribution-Github-Action@v1
+          with:
+            appId: ${{secrets.FIREBASE_APP_ID}}
+            token: ${{secrets.FIREBASE_TOKEN}}
+            groups: miljøhack2021
+            file: app/build/outputs/apk/app.apk
