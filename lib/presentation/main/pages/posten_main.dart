@@ -1,10 +1,9 @@
-import 'dart:developer';
-
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
+import 'package:miljohack/application/main/send_token/send_token.dart';
 import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
@@ -28,10 +27,9 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-
     tabController = TabController(length: 2, vsync: this);
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      log('Firebase message received: ${message.notification?.title} - ${message.notification?.body}');
+      //log('Firebase message received: ${message.notification?.title} - ${message.notification?.body}');
     });
   }
 
@@ -52,8 +50,10 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
               onPressed: () async {
                 final String? token =
                     await FirebaseMessaging.instance.getToken();
+
                 if (token != null) {
-                  apiClient.sendToken(token: token);
+                  BlocProvider.of<SendtokenBloc>(context)
+                      .add(SendToken(firebaseToken: token));
                   const snackBar = SnackBar(content: Text('Token sendt'));
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 } else {

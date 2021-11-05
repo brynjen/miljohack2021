@@ -10,7 +10,7 @@ class ApiClient {
   Future<bool> sendToken({required String token}) async {
     try {
       final uri = Uri.http(
-          host, 'notification', {'device_token': Uri.encodeFull(token)});
+          host, 'register-device', {'device_token': Uri.encodeFull(token)});
       final response = await http.get(uri);
       if (response.statusCode == 200) {
         return true;
@@ -52,5 +52,3 @@ class ApiClient {
     //await Future.delayed(const Duration(seconds: 4));
   }
 }
-
-// When optimizing - remember to fix bloc data

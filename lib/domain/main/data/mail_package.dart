@@ -1,5 +1,7 @@
-class MailPackage {
-  MailPackage({
+import 'package:equatable/equatable.dart';
+
+class MailPackage extends Equatable {
+  const MailPackage({
     required this.id,
     required this.climateOptimized,
     required this.shopName,
@@ -37,4 +39,8 @@ class MailPackage {
         deliveryDate: deliveryDate ?? this.deliveryDate,
         deliveryTime: deliveryTime ?? this.deliveryTime,
       );
+
+  @override
+  List<Object?> get props =>
+      [id, climateOptimized, shopName, message, deliveryDate, deliveryTime];
 }

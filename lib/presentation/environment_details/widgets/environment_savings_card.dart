@@ -33,50 +33,43 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Stack(
-          children: [
-            Positioned(
-              left: 0,
-              top: 0,
-              right: 0,
-              child: Image.asset('assets/images/environment_camouflage.png'),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Icon(
-                        MiljoHack.chat_bubble_outline,
-                        color: AppColors.white,
+        Container(
+          color: AppColors.red[600],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(
+                      MiljoHack.chat_bubble_outline,
+                      color: AppColors.white,
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        color: AppColors.red[600]!,
+                        child: Text(S.of(context).make_package_environment,
+                            style: TS
+                                .of(context)
+                                .subtitle
+                                .copyWith(color: AppColors.white)),
                       ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Container(
-                          color: AppColors.red[600]!,
-                          child: Text(S.of(context).make_package_environment,
-                              style: TS
-                                  .of(context)
-                                  .subtitle
-                                  .copyWith(color: AppColors.white)),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    S.of(context).environment_package_description,
-                    style: TS.of(context).body.copyWith(color: AppColors.white),
-                  ),
-                ],
-              ),
-            )
-          ],
+                    )
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  S.of(context).environment_package_description,
+                  style: TS.of(context).body.copyWith(color: AppColors.white),
+                ),
+              ],
+            ),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 0, bottom: 1, right: 1),

@@ -8,6 +8,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
+import 'package:miljohack/application/main/send_token/send_token.dart';
 import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
@@ -40,7 +41,8 @@ class Miljohack2021 extends StatelessWidget {
       providers: [
         BlocProvider<PackageListBloc>(
           create: (_) => PackageListBloc()..add(LoadPackages()),
-        )
+        ),
+        BlocProvider<SendtokenBloc>(create: (_) => SendtokenBloc()),
       ],
       child: MaterialApp(
         title: 'Miljøhack 2021 - Posten',

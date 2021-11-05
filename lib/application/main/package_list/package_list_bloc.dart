@@ -11,6 +11,7 @@ class PackageListBloc extends Bloc<PackageListEvent, PackageListState> {
 
   final ApiClient _api;
   final List<MailPackage> currentPackages = [];
+
   @override
   Stream<PackageListState> mapEventToState(event) async* {
     if (event is HackLoadedPackages) {
@@ -22,12 +23,16 @@ class PackageListBloc extends Bloc<PackageListEvent, PackageListState> {
         yield NoPackages();
       }
     } else if (event is LoadPackages) {
-      currentPackages.clear();
-      currentPackages.addAll(await _api.loadPackages());
-      if (currentPackages.isNotEmpty) {
-        yield LoadedPackages(mailPackages: currentPackages);
-      } else {
-        yield NoPackages();
+      try {
+        currentPackages.clear();
+        currentPackages.addAll(await _api.loadPackages());
+        if (currentPackages.isNotEmpty) {
+          yield LoadedPackages(mailPackages: currentPackages);
+        } else {
+          yield NoPackages();
+        }
+      } catch (e) {
+        yield FailedPackages();
       }
     } else if (event is UpdatedId) {
       final index =
