@@ -14,10 +14,10 @@ class PackageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       child: InkWell(
         onTap: onClick,
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(0),
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: ListTile(

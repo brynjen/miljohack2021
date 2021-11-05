@@ -29,11 +29,18 @@ class PackageDetails extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            EnvironmentSavingsCard(mailPackage: mailPackage),
-            const SizedBox(height: 10),
-            OptionsCard(),
-            const SizedBox(height: 10),
-            AugmentedRealityCard(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: [
+                  EnvironmentSavingsCard(mailPackage: mailPackage),
+                  const SizedBox(height: 10),
+                  const OptionsCard(),
+                  const SizedBox(height: 10),
+                  const AugmentedRealityCard(),
+                ],
+              ),
+            ),
           ],
         ),
       ),

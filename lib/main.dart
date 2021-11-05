@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -9,10 +8,11 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
+import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/main/pages/posten_main.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  log('Handling a background message ${message.messageId}');
+  //log('Handling a background message ${message.messageId}');
 }
 
 /// Create a [AndroidNotificationChannel] for heads up notifications
@@ -71,12 +71,8 @@ class Miljohack2021 extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Miljøhack 2021 - Posten',
-        theme: ThemeData.light().copyWith(
-            colorScheme:
-                ThemeData.light().colorScheme.copyWith(primary: Colors.red)),
-        darkTheme: ThemeData.dark().copyWith(
-            colorScheme:
-                ThemeData.light().colorScheme.copyWith(primary: Colors.red)),
+        theme: AppTheme.light,
+        darkTheme: AppTheme.dark,
         home: const PostenMain(),
       ),
     );

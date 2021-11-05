@@ -12,7 +12,6 @@ class ApiClient {
       final uri = Uri.http(
           host, 'notification', {'device_token': Uri.encodeFull(token)});
       final response = await http.get(uri);
-      log('Sent token:${response.statusCode} - ${response.body}');
       if (response.statusCode == 200) {
         return true;
       } else {
@@ -38,4 +37,20 @@ class ApiClient {
     }
     return mailPackages;
   }
+
+  Future<void> optimizePackage({required int packageId}) async {
+    final uri =
+        Uri.http(host, 'optimize-package', {'package_id': '$packageId'});
+    await http.get(uri);
+    //await Future.delayed(const Duration(seconds: 4));
+  }
+
+  Future<void> unOptimizePackage({required int packageId}) async {
+    final uri =
+        Uri.http(host, 'unoptimize-package', {'package_id': '$packageId'});
+    await http.get(uri);
+    //await Future.delayed(const Duration(seconds: 4));
+  }
 }
+
+// When optimizing - remember to fix bloc data

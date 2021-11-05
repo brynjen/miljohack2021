@@ -8,8 +8,8 @@ class MailAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      child: Icon(MiljoHack.package, color: AppColors.darkRed),
-      backgroundColor: AppColors.lightRed,
+      child: Icon(MiljoHack.package, color: AppColors.red[600]!),
+      backgroundColor: AppColors.red[200]!,
     );
   }
 }

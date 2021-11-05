@@ -1,16 +1,16 @@
-import 'package:equatable/equatable.dart';
 import 'package:miljohack/domain/main/data/mail_package.dart';
 
-class PackageListEvent extends Equatable {
-  @override
-  List<Object?> get props => [];
-}
+class PackageListEvent {}
 
 class LoadPackages extends PackageListEvent {}
 
 class HackLoadedPackages extends PackageListEvent {
   HackLoadedPackages({required this.mailPackages});
   final List<MailPackage> mailPackages;
-  @override
-  List<Object?> get props => mailPackages;
+}
+
+class UpdatedId extends PackageListEvent {
+  UpdatedId({required this.id, required this.newValue});
+  final int id;
+  final bool newValue;
 }
