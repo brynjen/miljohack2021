@@ -32,6 +32,6 @@ MailPackage fakeResponse(String shopName, bool optimized) => MailPackage(
     id: 1,
     climateOptimized: optimized,
     shopName: shopName,
-    message: 'meh',
     deliveryDate: 'deliveryDate',
+    deliveryTimestamp: '1234',
     deliveryTime: 'deliveryTime');
