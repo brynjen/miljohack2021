@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
-import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/main/widgets/circle_option.dart';
 
 class OptionsCard extends StatelessWidget {
@@ -9,7 +8,6 @@ class OptionsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

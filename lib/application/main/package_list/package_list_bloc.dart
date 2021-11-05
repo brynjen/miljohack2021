@@ -21,6 +21,14 @@ class PackageListBloc extends Bloc<PackageListEvent, PackageListState> {
       } else {
         yield NoPackages();
       }
+    } else if (event is LoadPackages) {
+      currentPackages.clear();
+      currentPackages.addAll(await _api.loadPackages());
+      if (currentPackages.isNotEmpty) {
+        yield LoadedPackages(mailPackages: currentPackages);
+      } else {
+        yield NoPackages();
+      }
     } else if (event is UpdatedId) {
       final index =
           currentPackages.indexWhere((element) => element.id == event.id);

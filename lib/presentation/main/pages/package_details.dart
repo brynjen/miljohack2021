@@ -21,7 +21,7 @@ class PackageDetails extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              color: AppColors.white,
+              color: Theme.of(context).cardTheme.color,
               child: ListTile(
                 title: Text(mailPackage.shopName, style: TS.of(context).bold),
                 subtitle: Text('Frakt er bestilt', style: TS.of(context).body),

@@ -37,7 +37,8 @@ class Miljohack2021 extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<PackageListBloc>(
-            create: (_) => PackageListBloc()) // ..add(LoadPackages())
+          create: (_) => PackageListBloc()..add(LoadPackages()),
+        )
       ],
       child: MaterialApp(
         title: 'Miljøhack 2021 - Posten',
