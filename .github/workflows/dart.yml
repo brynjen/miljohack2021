@@ -33,4 +33,4 @@ jobs:
           appId: ${{secrets.FIREBASE_APP_ID}}
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: miljøhack2021
-          file: app/build/outputs/apk/app.apk
+          file: build/app/outputs/flutter-apk/app-release.apk
