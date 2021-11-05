@@ -5,8 +5,19 @@ import 'package:miljohack/domain/main/data/mail_package.dart';
 import 'package:miljohack/presentation/main/pages/package_details.dart';
 import 'package:miljohack/presentation/main/widgets/package_card.dart';
 
-class ForMe extends StatelessWidget {
+class ForMe extends StatefulWidget {
   const ForMe({Key? key}) : super(key: key);
+
+  @override
+  State<ForMe> createState() => _ForMeState();
+}
+
+class _ForMeState extends State<ForMe> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(Image.asset('assets/gifs/greta.gif').image, context);
+  }
 
   @override
   Widget build(BuildContext context) {

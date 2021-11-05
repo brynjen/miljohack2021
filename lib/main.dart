@@ -26,7 +26,6 @@ void main() async {
     await Firebase.initializeApp();
     setupDependencyInjection();
     await setupFirebaseMessaging();
-
     runApp(const Miljohack2021());
   }, (error, stackTrace) {});
 }

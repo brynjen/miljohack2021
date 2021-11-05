@@ -9,6 +9,8 @@ import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/environment_details/pages/environment_extra.dart';
 
+import 'greta_easter_dialog.dart';
+
 class EnvironmentSavingsCard extends StatefulWidget {
   const EnvironmentSavingsCard({required this.mailPackage, Key? key})
       : super(key: key);
@@ -108,6 +110,10 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                                 } else {
                                   await apiClient.unOptimizePackage(
                                       packageId: widget.mailPackage.id);
+                                  showDialog(
+                                      context: context,
+                                      builder: (_) =>
+                                          const GretaEasterDialog());
                                 }
                                 BlocProvider.of<PackageListBloc>(context).add(
                                     UpdatedId(
