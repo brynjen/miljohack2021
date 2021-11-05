@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miljohack/generated/l10n.dart';
 
 class EnvironmentExtra extends StatelessWidget {
   const EnvironmentExtra({Key? key}) : super(key: key);
@@ -7,10 +8,10 @@ class EnvironmentExtra extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Miljø stuff'),
+        title: Text(S.of(context).environment_stuff_title),
       ),
       body: Center(
-        child: Text('Her er masse nyttig om miljø ting'),
+        child: Text(S.of(context).environment_stuff_message),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/main/widgets/circle_option.dart';
 
@@ -16,19 +17,21 @@ class OptionsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleOption(
-                text: 'Endre navn',
+                text: S.of(context).change_name,
                 iconData: MiljoHack.pencil_squared,
                 onClick: () {}),
             CircleOption(
-                text: 'Del pakke',
+                text: S.of(context).share_package,
                 iconData: MiljoHack.share_square,
                 onClick: () {}),
             CircleOption(
-                text: 'Flytt til sendt',
+                text: S.of(context).move_to_sent,
                 iconData: MiljoHack.exchange,
                 onClick: () {}),
             CircleOption(
-                text: 'Slett', iconData: MiljoHack.trashcan, onClick: () {}),
+                text: S.of(context).delete,
+                iconData: MiljoHack.trashcan,
+                onClick: () {}),
           ],
         ),
       ),

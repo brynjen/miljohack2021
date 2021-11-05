@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
 import 'package:miljohack/domain/main/data/mail_package.dart';
+import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
@@ -38,9 +39,7 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
               left: 0,
               top: 0,
               right: 0,
-              child: Image.asset(
-                'assets/images/environment_camouflage.png',
-              ),
+              child: Image.asset('assets/images/environment_camouflage.png'),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -57,19 +56,21 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                         color: AppColors.white,
                       ),
                       const SizedBox(width: 10),
-                      Container(
-                        color: AppColors.red[600]!,
-                        child: Text('Gjør pakken bærekraftig!',
-                            style: TS
-                                .of(context)
-                                .subtitle
-                                .copyWith(color: AppColors.white)),
+                      Expanded(
+                        child: Container(
+                          color: AppColors.red[600]!,
+                          child: Text(S.of(context).make_package_environment,
+                              style: TS
+                                  .of(context)
+                                  .subtitle
+                                  .copyWith(color: AppColors.white)),
+                        ),
                       )
                     ],
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'Denne pakken kan leveres sammen med andre pakker du har på vei. Da sparer du miljøet og tjener Miljøpoeng!',
+                    S.of(context).environment_package_description,
                     style: TS.of(context).body.copyWith(color: AppColors.white),
                   ),
                 ],
@@ -98,7 +99,7 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                     children: [
                       Expanded(
                         child: Text(
-                          'Ja takk, gjør pakken min mer bærekraftig',
+                          S.of(context).make_my_package_environment,
                           style: TS.of(context).fatSubTitle,
                         ),
                       ),
@@ -138,7 +139,7 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
                       child: Text(
-                        'Her kan du lese mer om bærekraftig frakt',
+                        S.of(context).read_more_about_environment,
                         style: TS.of(context).link,
                       ),
                     ),

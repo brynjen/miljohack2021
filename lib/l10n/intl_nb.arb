@@ -1,0 +1,22 @@
+{
+  "@@locale": "nb",
+  "@@context": "HomePage",
+  "change_name": "Endre navn",
+  "share_package": "Del pakke",
+  "move_to_sent": "Flytt til sendt",
+  "delete": "Slett",
+  "to_me": "TIL MEG",
+  "from_me": "FRA MEG",
+  "my_packages": "Mine pakker",
+  "send": "Sende",
+  "profile": "Profil",
+  "package_details": "Detaljer på pakken",
+  "package_ordered": "Frakt er bestilt",
+  "you_are_not_sending": "Du sender ingen pakker",
+  "make_package_environment": "Gjør pakken bærekraftig!",
+  "environment_package_description": "Denne pakken kan leveres sammen med andre pakker du har på vei. Da sparer du miljøet og tjener Miljøpoeng!",
+  "make_my_package_environment": "Ja takk, gjør pakken min mer bærekraftig",
+  "read_more_about_environment": "Her kan du lese mer om bærekraftig frakt",
+  "environment_stuff_title": "Miljø stuff",
+  "environment_stuff_message": "Her er masse nyttig om miljø ting"
+}

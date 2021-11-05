@@ -5,8 +5,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
+import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/main/pages/posten_main.dart';
@@ -44,6 +46,15 @@ class Miljohack2021 extends StatelessWidget {
         title: 'Miljøhack 2021 - Posten',
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,
+        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        localeListResolutionCallback: (locales, supported) =>
+            findLocale(locales: locales, supportedLocales: supported),
         home: const PostenMain(),
       ),
     );
@@ -85,4 +96,17 @@ Future<void> setupFirebaseMessaging() async {
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   //log('Handling a background message ${message.messageId}');
+}
+
+Locale findLocale({
+  required List<Locale>? locales,
+  required Iterable<Locale> supportedLocales,
+}) {
+  final supportedLanguages =
+      supportedLocales.map((e) => e.languageCode).toList();
+  final primaryLocale = locales!.firstWhere(
+    (locale) => supportedLanguages.contains(locale.languageCode),
+    orElse: () => const Locale('en', 'US'),
+  );
+  return primaryLocale;
 }

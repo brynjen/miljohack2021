@@ -1,0 +1,22 @@
+{
+  "@@locale": "en",
+  "@@context": "HomePage",
+  "change_name": "Change name",
+  "share_package": "Share package",
+  "move_to_sent": "Move to sent",
+  "delete": "Delete",
+  "to_me": "TO ME",
+  "from_me": "FROM ME",
+  "my_packages": "My packages",
+  "send": "Send",
+  "profile": "Profile",
+  "package_details": "Package details",
+  "package_ordered": "Package is ordered",
+  "you_are_not_sending": "You are not sending packages",
+  "make_package_environment": "Make the package environmentally friendly!",
+  "environment_package_description": "This package can be delivered with other packages you have on the way. You'll save the climate and earn environment points!",
+  "make_my_package_environment": "Yes please, make my package environmentally friendly",
+  "read_more_about_environment": "Read more about environmentally friendly deliveries here",
+  "environment_stuff_title": "Environmental stuff",
+  "environment_stuff_message": "Here is a lot of stuff about environment"
+}

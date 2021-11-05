@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:miljohack/application/main/package_list/package_list.dart';
+import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/main/pages/for_me.dart';
@@ -43,7 +44,7 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mine pakker'),
+        title: Text(S.of(context).my_packages),
         actions: [
           IconButton(
               onPressed: () async {
@@ -67,7 +68,10 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
               tabController.index = index;
             });
           },
-          tabs: const [Tab(text: 'TIL MEG'), Tab(text: 'FRA MEG')],
+          tabs: [
+            Tab(text: S.of(context).to_me),
+            Tab(text: S.of(context).from_me)
+          ],
         ),
       ),
       body: RefreshIndicator(
@@ -75,12 +79,15 @@ class _PostenMainState extends State<PostenMain> with TickerProviderStateMixin {
         child: tabPages[tabController.index],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
+        items: [
           BottomNavigationBarItem(
-              icon: Icon(MiljoHack.package), label: 'Mine pakker'),
-          BottomNavigationBarItem(icon: Icon(MiljoHack.send), label: 'Sende'),
+              icon: const Icon(MiljoHack.package),
+              label: S.of(context).my_packages),
           BottomNavigationBarItem(
-              icon: Icon(MiljoHack.account_circle), label: 'Profil')
+              icon: const Icon(MiljoHack.send), label: S.of(context).send),
+          BottomNavigationBarItem(
+              icon: const Icon(MiljoHack.account_circle),
+              label: S.of(context).profile)
         ],
       ),
     );
