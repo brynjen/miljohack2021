@@ -3,6 +3,7 @@ import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/core/widgets/smiley_card.dart';
+import 'package:miljohack/presentation/environment_details/widgets/achievements_card.dart';
 import 'package:miljohack/presentation/environment_details/widgets/dollar_container.dart';
 import 'package:miljohack/presentation/environment_details/widgets/reward_row.dart';
 
@@ -96,6 +97,8 @@ class EnvironmentPointsPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 10),
+          const AchievementsCard(),
         ],
       ),
     );

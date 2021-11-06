@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:miljohack/application/environment_details/leaderboard/leaderboard.dart';
 import 'package:miljohack/domain/environment_details/area_score.dart';
 import 'package:miljohack/generated/l10n.dart';
+import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/core/widgets/smiley_card.dart';
+import 'package:miljohack/presentation/environment_details/pages/achievements_leaderboard_page.dart';
 import 'package:miljohack/presentation/environment_details/widgets/area_line.dart';
 
 class LeaderboardPage extends StatefulWidget {
@@ -95,6 +97,21 @@ class _LoadedLeaderboardState extends State<_LoadedLeaderboard> {
                   areaScore:
                       widget.areaScores.firstWhere((area) => area.marked)),
             ),
+          ),
+          const SizedBox(height: 10),
+          Card(
+            child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const AchievementsLeaderboardPage()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Text(
+                    'Se dine achievements på det nasjonale leaderboardet',
+                    style: TS.of(context).fatSubTitle,
+                  ),
+                )),
           ),
           const SizedBox(height: 10),
           Expanded(
