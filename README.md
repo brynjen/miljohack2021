@@ -18,7 +18,7 @@ This github is a Flutter project for Miljøhack 2021.
 - Backend rest api and logic in Python
 
 ## Architecture schema
-Architecture plan [here](MiljohackArchitecture)
+Architecture plan [here](MiljohackArchitecture.drawio)
 
 ## Business plan
 To see more of how our business plan is look [here](business-plan.png)
