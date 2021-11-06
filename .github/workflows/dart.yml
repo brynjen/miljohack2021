@@ -24,9 +24,10 @@ jobs:
         with:
           channel: 'stable' # or: 'beta', 'dev' or 'master'
       - name: Add google services
-        run:
-          mkdir $HOME/private \
-          gpg --quiet --batch --yes --decrypt --passphrase="$FIREBASE_SECRET" --output $HOME/private/services.tar services.tar.gpg \
+        run: |
+          mkdir $HOME/private
+          gpg --quiet --batch --yes --decrypt --passphrase="$FIREBASE_SECRET" --output $HOME/private/services.tar services.tar.gpg
+          tar xvf $HOME/private/services.tar
           tar xvf $HOME/private/services.tar
         env:
           FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
