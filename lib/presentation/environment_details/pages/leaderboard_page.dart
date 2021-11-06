@@ -1,5 +1,4 @@
-import 'dart:developer';
-
+import 'package:easy_scroll_to_index/easy_scroll_to_index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:miljohack/application/environment_details/leaderboard/leaderboard.dart';
@@ -9,14 +8,14 @@ import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
 import 'package:miljohack/presentation/environment_details/widgets/area_line.dart';
 
-class EnvironmentExtra extends StatefulWidget {
-  const EnvironmentExtra({Key? key}) : super(key: key);
+class LeaderboardPage extends StatefulWidget {
+  const LeaderboardPage({Key? key}) : super(key: key);
 
   @override
-  State<EnvironmentExtra> createState() => _EnvironmentExtraState();
+  State<LeaderboardPage> createState() => _LeaderboardPageState();
 }
 
-class _EnvironmentExtraState extends State<EnvironmentExtra> {
+class _LeaderboardPageState extends State<LeaderboardPage> {
   final LeaderboardBloc _bloc = LeaderboardBloc();
 
   @override
@@ -37,7 +36,6 @@ class _EnvironmentExtraState extends State<EnvironmentExtra> {
             if (state is LoadingLeaderboard) {
               return const _LoadingLeaderboard();
             } else if (state is LoadedLeaderboard) {
-              log('States: ${state.areaScores}');
               return _LoadedLeaderboard(areaScores: state.areaScores);
             } else if (state is FailedLoadingLeaderboard) {
               return const _FailedLoadingLeaderboard();
@@ -70,15 +68,15 @@ class _LoadedLeaderboard extends StatefulWidget {
 }
 
 class _LoadedLeaderboardState extends State<_LoadedLeaderboard> {
-  late final ScrollController controller;
+  final controller = ScrollToIndexController();
 
   @override
   void initState() {
     super.initState();
-    controller = ScrollController(
-        initialScrollOffset: widget.areaScores
-            .indexWhere((element) => element.marked)
-            .toDouble());
+    Future.delayed(
+        const Duration(milliseconds: 500),
+        () => controller.easyScrollToIndex(
+            index: widget.areaScores.indexWhere((element) => element.marked)));
   }
 
   @override
@@ -132,13 +130,17 @@ class _LoadedLeaderboardState extends State<_LoadedLeaderboard> {
             child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(0)),
-              child: ListView.builder(
-                controller: controller,
+              child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-                itemBuilder: (_, index) =>
-                    AreaLine(areaScore: widget.areaScores[index]),
-                itemCount: widget.areaScores.length,
+                child: EasyScrollToIndex(
+                  itemCount: widget.areaScores.length,
+                  controller: controller,
+                  itemHeight: 14,
+                  itemWidth: double.infinity,
+                  itemBuilder: (_, index) =>
+                      AreaLine(areaScore: widget.areaScores[index]),
+                ),
               ),
             ),
           ),
