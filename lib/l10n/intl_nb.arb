@@ -20,5 +20,6 @@
   "environment_stuff_title": "Detaljer",
   "environment_stuff_message": "Her er masse nyttig om miljø ting",
   "greet_user": "Hei {name}",
-  "thank_you": "Takk for at du handler bærekraftig - her kan du se topplisten og hvordan du og naboene dine ligger an. Spre ryktet :)"
+  "thank_you": "Takk for at du handler bærekraftig - her kan du se topplisten og hvordan du og naboene dine ligger an. Spre ryktet :)",
+  "helpful_text": "Så fint at du handler bærekraftig! Her kan du se poengene du har tjent på å hjelpe oss med å redusere ressursbruken."
 }

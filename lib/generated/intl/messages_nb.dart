@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Detaljer"),
         "from_me": MessageLookupByLibrary.simpleMessage("FRA MEG"),
         "greet_user": m0,
+        "helpful_text": MessageLookupByLibrary.simpleMessage(
+            "Så fint at du handler bærekraftig! Her kan du se poengene du har tjent på å hjelpe oss med å redusere ressursbruken."),
         "make_my_package_environment": MessageLookupByLibrary.simpleMessage(
             "Ja takk, gjør pakken min mer bærekraftig"),
         "make_package_environment":

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
+import 'package:miljohack/presentation/environment_details/pages/environment_points_page.dart';
 import 'package:miljohack/presentation/environment_details/pages/leaderboard_page.dart';
 import 'package:miljohack/presentation/profile/widgets/profile_description.dart';
 import 'package:miljohack/presentation/profile/widgets/simple_row.dart';
@@ -32,7 +33,10 @@ class ProfilePage extends StatelessWidget {
           SimpleRow(
             iconData: MiljoHack.bell,
             title: 'Miljøpoeng',
-            onClick: () {},
+            onClick: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => const EnvironmentPointsPage()));
+            },
           ),
           SimpleRow(
             iconData: MiljoHack.chat,

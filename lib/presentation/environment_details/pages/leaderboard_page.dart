@@ -4,8 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:miljohack/application/environment_details/leaderboard/leaderboard.dart';
 import 'package:miljohack/domain/environment_details/area_score.dart';
 import 'package:miljohack/generated/l10n.dart';
-import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
-import 'package:miljohack/presentation/core/theme/app_theme.dart';
+import 'package:miljohack/presentation/core/widgets/smiley_card.dart';
 import 'package:miljohack/presentation/environment_details/widgets/area_line.dart';
 
 class LeaderboardPage extends StatefulWidget {
@@ -85,35 +84,7 @@ class _LoadedLeaderboardState extends State<_LoadedLeaderboard> {
       padding: const EdgeInsets.all(10),
       child: Column(
         children: [
-          Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        MiljoHack.emo_wink2,
-                        color: AppColors.red[600],
-                      ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: Text(
-                          S.of(context).greet_user('David'),
-                          style: TS.of(context).subtitle,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Text(S.of(context).thank_you, style: TS.of(context).body)
-                ],
-              ),
-            ),
-          ),
+          SmileyCard(text: S.of(context).thank_you),
           const SizedBox(height: 10),
           Card(
             shape:

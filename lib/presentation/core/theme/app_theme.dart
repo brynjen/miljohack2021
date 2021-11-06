@@ -86,6 +86,11 @@ class TS {
       fontWeight: FontWeight.w900,
       color: context.isLight ? Colors.black : Colors.white);
 
+  TextStyle get header => TextStyle(
+      fontSize: 26,
+      fontWeight: FontWeight.w700,
+      color: context.isLight ? Colors.black : Colors.white);
+
   TextStyle get body => TextStyle(
       fontSize: 16, color: context.isLight ? Colors.black : Colors.white);
 

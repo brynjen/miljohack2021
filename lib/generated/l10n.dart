@@ -249,6 +249,16 @@ class S {
       args: [],
     );
   }
+
+  /// `So nice of you to shop environmentally! Here you can see the points you've earned by helping us reduce resource use.`
+  String get helpful_text {
+    return Intl.message(
+      'So nice of you to shop environmentally! Here you can see the points you\'ve earned by helping us reduce resource use.',
+      name: 'helpful_text',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
