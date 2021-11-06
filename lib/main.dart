@@ -30,10 +30,14 @@ void main() async {
   }, (error, stackTrace) {});
 }
 
-class Miljohack2021 extends StatelessWidget {
+class Miljohack2021 extends StatefulWidget {
   const Miljohack2021({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<Miljohack2021> createState() => _Miljohack2021State();
+}
+
+class _Miljohack2021State extends State<Miljohack2021> {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

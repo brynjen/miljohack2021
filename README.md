@@ -17,6 +17,9 @@ This github is a Flutter project for Miljøhack 2021.
 - Backend ML model made in Python
 - Backend rest api and logic in Python
 
+## Architecture schema
+Architecture plan [here](MiljohackArchitecture)
+
 ## Business plan
 To see more of how our business plan is look [here](business-plan.png)
 
