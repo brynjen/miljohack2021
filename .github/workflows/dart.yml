@@ -23,11 +23,19 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable' # or: 'beta', 'dev' or 'master'
-      - run: flutter pub get
-      - run: flutter pub run intl_utils:generate && echo "Generated resources"
-      - run: flutter doctor -v
-      - run: flutter test test/*.dart
-      - run: flutter build apk
+      - name: Add google services
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$FIREBASE_SECRET" --output $HOME/private/services.tar services.tar.gpg
+          tar xvf $HOME/private/services.tar
+        env:
+          FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
+      - name: Set up Flutter
+        run: flutter pub get \
+             flutter pub run intl_utils:generate && echo "Generated resources" \
+             flutter doctor -v
+      - name: Test Flutter
+        run: flutter test test/*.dart
+      - name: Build apk
+        run: flutter build apk
       - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
