@@ -1,8 +1,15 @@
 # Miljøhack 2021 Posten
 Build status: ![Build status:](https://github.com/brynjen/miljohack2021/actions/workflows/dart.yml/badge.svg)
 
-Flutter project for Miljøhack 2021.
+# Premise
+We are optimizing the last mile for mail delivery to conserve how many transports are shipped out,
+considerably lowering Co2 cost of the extra transports - using customer good will to accept that
+the packages arrive at a later time with a point system and bonus arrangements.
+
 Team: ![Team Awesome](team-awesome.png "Team awesome")
+
+
+This github is a Flutter project for Miljøhack 2021.
 
 ## Quick walkThrough of project
 - Access our kanban flow [here](https://github.com/brynjen/miljohack2021/projects/1)
