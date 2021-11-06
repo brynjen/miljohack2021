@@ -49,7 +49,7 @@ class ApiClient {
     final places = output as List<dynamic>;
     for (int i = 0; i < places.length; i++) {
       areaScores.add(AreaScore.fromJson(
-          json: places[i], placement: i + 1, marked: i == 2));
+          json: places[i], placement: i + 1, marked: i == 40));
     }
     return areaScores;
   }

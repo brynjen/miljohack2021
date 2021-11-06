@@ -1,0 +1,118 @@
+{
+  "name": "MiljoHack",
+  "css_prefix_text": "",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "22a893e7725504a4a3b8905fb20cac53",
+      "css": "account_circle",
+      "code": 59392,
+      "src": "material"
+    },
+    {
+      "uid": "0cfe3ba1497065ea5f31e4d9c9761be1",
+      "css": "chat_bubble_outline",
+      "code": 59393,
+      "src": "material"
+    },
+    {
+      "uid": "33e246f3f2079b4119cd414914a96c00",
+      "css": "send",
+      "code": 59394,
+      "src": "material"
+    },
+    {
+      "uid": "e9f1a4c7968111eab72aacfdce5a3d9f",
+      "css": "package",
+      "code": 62339,
+      "src": "octicons"
+    },
+    {
+      "uid": "e9f1a480968111eab72aacfdce5a3d9f",
+      "css": "trashcan",
+      "code": 62268,
+      "src": "octicons"
+    },
+    {
+      "uid": "e07df3e5b9ae72836b7804f38f0644a9",
+      "css": "exchange",
+      "code": 59395,
+      "src": "iconic"
+    },
+    {
+      "uid": "fa43cbe59203a8fda5cf61d1fe623108",
+      "css": "share_square",
+      "code": 61773,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "44fae3bfdd54754dc68ec50d37efea37",
+      "css": "pencil-squared",
+      "code": 61771,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4bb2045a2aca451705fe8a23c4a576ab",
+      "css": "emo-wink2",
+      "code": 59411,
+      "src": "fontelico"
+    },
+    {
+      "uid": "dcedf50ab1ede3283d7a6c70e2fe32f3",
+      "css": "chat",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "936a37fdc216778d39fdc80a3c2803d1",
+      "css": "bell",
+      "code": 61683,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "7831bbc6ddae8fc18e6593d3e2883669",
+      "css": "email",
+      "code": 59397,
+      "src": "material"
+    },
+    {
+      "uid": "7472fe2c3787ab610355cddcf4e199ba",
+      "css": "home",
+      "code": 61461,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "3d88df88e5ea413b0f62a40fdcdefee2",
+      "css": "external_link_alt",
+      "code": 62301,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "67897933d14dccc8984781dbdaff21af",
+      "css": "edit",
+      "code": 59398,
+      "src": "material"
+    },
+    {
+      "uid": "db592c1f2be4bec6b2962aad2b0d6c42",
+      "css": "dollar_sign",
+      "code": 61781,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "656b3512c2b4defd5a6d4e95fbc21065",
+      "css": "gift",
+      "code": 61547,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "862d4faacb164c0412cb3249d43d5d39",
+      "css": "t-shirt",
+      "code": 59399,
+      "src": "linecons"
+    }
+  ]
+}

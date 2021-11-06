@@ -20,14 +20,18 @@
 ///         Author:    P.J. Onori
 ///         License:   SIL (http://scripts.sil.org/OFL)
 ///         Homepage:  http://somerandomdude.com/work/iconic/
-/// * Fontelico, Copyright (C) 2012 by Fontello project
-///         Author:    Crowdsourced, for Fontello project
-///         License:   SIL (http://scripts.sil.org/OFL)
-///         Homepage:  http://fontello.com
 /// * Font Awesome 4, Copyright (C) 2016 by Dave Gandy
 ///         Author:    Dave Gandy
 ///         License:   SIL ()
 ///         Homepage:  http://fortawesome.github.com/Font-Awesome/
+/// * Linecons, Copyright (C) 2013 by Designmodo
+///         Author:    Designmodo for Smashing Magazine
+///         License:   CC BY ()
+///         Homepage:  http://designmodo.com/linecons-free/
+/// * Fontelico, Copyright (C) 2012 by Fontello project
+///         Author:    Crowdsourced, for Fontello project
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://fontello.com
 /// * Font Awesome 5, Copyright (C) 2016 by Dave Gandy
 ///         Author:    Dave Gandy
 ///         License:   SIL (https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt)
@@ -49,9 +53,18 @@ class MiljoHack {
   static const IconData chat_bubble_outline = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData send = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData exchange = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData chat = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData email = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData edit = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData t_shirt = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData emo_wink2 = IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData home = IconData(0xf015, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData gift = IconData(0xf06b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData bell = IconData(0xf0f3, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData pencil_squared = IconData(0xf14b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData share_square = IconData(0xf14d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData dollar_sign = IconData(0xf155, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData trashcan = IconData(0xf33c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData external_link_alt = IconData(0xf35d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData package = IconData(0xf383, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

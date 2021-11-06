@@ -46,7 +46,7 @@ dependencies:
   #cloud_firestore: ^2.5.4 # For FireStore communication, database - if we want it
 
   # Utils
-  scroll_to_index: ^2.1.0
+  easy_scroll_to_index: ^1.0.2+1
 
 dev_dependencies:
 #  flutter_test:

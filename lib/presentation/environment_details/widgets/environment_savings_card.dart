@@ -7,7 +7,7 @@ import 'package:miljohack/generated/l10n.dart';
 import 'package:miljohack/infrastructure/network/api_client.dart';
 import 'package:miljohack/presentation/core/icons/miljo_hack_icons.dart';
 import 'package:miljohack/presentation/core/theme/app_theme.dart';
-import 'package:miljohack/presentation/environment_details/pages/environment_extra.dart';
+import 'package:miljohack/presentation/environment_details/pages/leaderboard_page.dart';
 
 import 'greta_easter_dialog.dart';
 
@@ -133,7 +133,7 @@ class _EnvironmentSavingsCardState extends State<EnvironmentSavingsCard> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_) => const EnvironmentExtra()));
+                          builder: (_) => const LeaderboardPage()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 5),
