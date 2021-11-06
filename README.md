@@ -1,6 +1,8 @@
 # Miljøhack 2021 Posten
+[App workflow](https://github.com/brynjen/miljohack2021/actions/workflows/dart.yml/badge.svg)
 
 Flutter project for Miljøhack 2021.
+Team: ![Team Awesome](team-awesome.png "Team awesome")
 
 ## Quick walkThrough of project
 
@@ -9,6 +11,9 @@ Flutter project for Miljøhack 2021.
 - Uses Firebase as backend
 - Startpoint of it is [main.dart]
 - Project kanban is available at github
+
+## Risk analysis
+To look deeper into our risk analysis check out []
 
 ## Icon update
 To update icon, upload [assets/icons/config.json] to [FlutterIcons](https://www.fluttericons.com),
