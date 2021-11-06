@@ -31,9 +31,10 @@ jobs:
         env:
           FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
       - name: Set up Flutter
-        run: flutter pub get \
-             flutter pub run intl_utils:generate && echo "Generated resources" \
-             flutter doctor -v
+        run: |
+          flutter pub get
+          flutter pub run intl_utils:generate && echo "Generated resources"
+          flutter doctor -v
       - name: Test Flutter
         run: flutter test test/*.dart
       - name: Build apk
